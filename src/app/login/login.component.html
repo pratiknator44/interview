@@ -1,0 +1,17 @@
+Username: <input type="text" [(ngModel)]="username" /><br>
+Password: <input type="password" [(ngModel)]="password" />
+<br>
+<input type="button" value="Submit" (click)="submit()" />
+
+<hr>
+<br>
+
+<div *ngFor="let org of orgs">
+  <input type="radio" [(ngModel)]="selectedOrg" name="organizations" [value]="org" [id]="org"> <label [for]="org">{{org}}</label>
+</div>
+<button (click)="submitOrg()">Submit Organization</button>
+
+
+<hr>
+<br>
+{{finalresponse | json}}
